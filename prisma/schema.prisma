@@ -1,0 +1,162 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+enum UserRole {
+  STUDENT
+  ADMIN
+}
+
+enum QuestionDifficulty {
+  EASY
+  MEDIUM
+  HARD
+}
+
+model User {
+  id        Int      @id @default(autoincrement())
+  name      String?
+  email     String   @unique
+  role      UserRole @default(STUDENT)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  attempts  ExamAttempt[]
+  bookmarks Bookmark[]
+
+  @@index([role])
+}
+
+model Subject {
+  id          Int      @id @default(autoincrement())
+  name        String   @unique
+  description String?
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  questions Question[]
+  exams     ExamSubject[]
+}
+
+model Exam {
+  id          Int      @id @default(autoincrement())
+  title       String
+  description String?
+  duration    Int?
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  questions ExamQuestion[]
+  subjects  ExamSubject[]
+  attempts  ExamAttempt[]
+}
+
+model ExamSubject {
+  examId    Int
+  subjectId Int
+
+  exam    Exam    @relation(fields: [examId], references: [id], onDelete: Cascade)
+  subject Subject @relation(fields: [subjectId], references: [id], onDelete: Cascade)
+
+  @@id([examId, subjectId])
+  @@index([subjectId])
+}
+
+model Question {
+  id          Int                @id @default(autoincrement())
+  question    String
+  explanation String?
+  difficulty  QuestionDifficulty @default(MEDIUM)
+  isActive    Boolean            @default(true)
+  subjectId   Int
+  createdAt   DateTime           @default(now())
+  updatedAt   DateTime           @updatedAt
+
+  subject   Subject        @relation(fields: [subjectId], references: [id])
+  choices   Choice[]
+  exams     ExamQuestion[]
+  answers   Answer[]
+  bookmarks Bookmark[]
+
+  @@index([subjectId])
+  @@index([difficulty])
+  @@index([isActive])
+}
+
+model Choice {
+  id         Int      @id @default(autoincrement())
+  questionId Int
+  text       String
+  isCorrect  Boolean  @default(false)
+  createdAt  DateTime @default(now())
+  updatedAt  DateTime @updatedAt
+
+  question Question @relation(fields: [questionId], references: [id], onDelete: Cascade)
+  answers  Answer[]
+
+  @@index([questionId])
+}
+
+model ExamQuestion {
+  examId     Int
+  questionId Int
+  order      Int
+
+  exam     Exam     @relation(fields: [examId], references: [id], onDelete: Cascade)
+  question Question @relation(fields: [questionId], references: [id], onDelete: Cascade)
+
+  @@id([examId, questionId])
+  @@index([examId, order])
+  @@index([questionId])
+}
+
+model ExamAttempt {
+  id          Int       @id @default(autoincrement())
+  userId      Int
+  examId      Int
+  score       Float?
+  startedAt   DateTime  @default(now())
+  completedAt DateTime?
+
+  user    User     @relation(fields: [userId], references: [id])
+  exam    Exam     @relation(fields: [examId], references: [id])
+  answers Answer[]
+
+  @@index([userId])
+  @@index([examId])
+  @@index([userId, examId])
+}
+
+model Answer {
+  id         Int      @id @default(autoincrement())
+  attemptId  Int
+  questionId Int
+  choiceId   Int?
+  isCorrect  Boolean?
+  answeredAt DateTime @default(now())
+
+  attempt  ExamAttempt @relation(fields: [attemptId], references: [id], onDelete: Cascade)
+  question Question    @relation(fields: [questionId], references: [id])
+  choice   Choice?     @relation(fields: [choiceId], references: [id])
+
+  @@unique([attemptId, questionId])
+  @@index([questionId])
+  @@index([choiceId])
+}
+
+model Bookmark {
+  id         Int      @id @default(autoincrement())
+  userId     Int
+  questionId Int
+  createdAt  DateTime @default(now())
+
+  user     User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  question Question @relation(fields: [questionId], references: [id], onDelete: Cascade)
+
+  @@unique([userId, questionId])
+  @@index([questionId])
+}
