@@ -1,5 +1,6 @@
 import { PrismaPg } from "@prisma/adapter-pg";
 import { PrismaClient } from "@prisma/client";
+import { randomBytes, scryptSync } from "node:crypto";
 
 const adapter = new PrismaPg({
   connectionString: process.env.DATABASE_URL,
@@ -9,6 +10,13 @@ const prisma = new PrismaClient({
   adapter,
 });
 
+const demoSalt = randomBytes(16).toString("hex");
+const demoPasswordHash = `${demoSalt}:${scryptSync(
+  "password123",
+  demoSalt,
+  64
+).toString("hex")}`;
+
 async function main() {
   console.log("🌱 Starting seed...");
 const user = await prisma.user.upsert({
@@ -17,11 +25,15 @@ const user = await prisma.user.upsert({
   },
   update: {
     name: "นักเรียนทดลอง",
+    username: "demo",
+    passwordHash: demoPasswordHash,
     role: "STUDENT",
   },
   create: {
     name: "นักเรียนทดลอง",
     email: "student@example.com",
+    username: "demo",
+    passwordHash: demoPasswordHash,
     role: "STUDENT",
   },
 });

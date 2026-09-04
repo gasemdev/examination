@@ -1,4 +1,5 @@
 import { Card, Progress, Typography } from "antd";
+import { useTranslations } from "next-intl";
 
 const { Text } = Typography;
 
@@ -13,13 +14,14 @@ export function ExamProgress({
   questionCount,
   progressPercent,
 }: ExamProgressProps) {
+  const t = useTranslations("exam");
   return (
     <Card>
       <div className="space-y-3">
         <div className="flex justify-between">
-          <Text strong>ความคืบหน้า</Text>
+          <Text strong className="!text-white">{t("progress")}</Text>
           <Text>
-            {answeredCount} / {questionCount} ข้อ
+            {t("answered", { count: answeredCount, total: questionCount })}
           </Text>
         </div>
         <Progress percent={progressPercent} showInfo />

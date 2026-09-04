@@ -1,4 +1,5 @@
 import { Card, Radio, Space, Typography } from "antd";
+import { useTranslations } from "next-intl";
 
 import type { Question } from "@/modules/exam/types/exam.types";
 
@@ -17,12 +18,13 @@ export function QuestionCard({
   saving,
   onAnswer,
 }: QuestionCardProps) {
+  const t = useTranslations("exam");
   return (
     <Card>
       <div className="space-y-6">
         <div>
-          <Text type="secondary">{question.subject.name}</Text>
-          <Title level={4} className="!mt-2">
+          <Text className="!text-xs !font-semibold !uppercase !tracking-[0.12em] !text-[#7e72ff]">{question.subject.name}</Text>
+          <Title level={4} className="mt-2! text-white!">
             {question.question}
           </Title>
         </div>
@@ -36,14 +38,14 @@ export function QuestionCard({
               <Radio
                 key={choice.id}
                 value={choice.id}
-                className="w-full rounded-lg border border-slate-200 p-4"
+                className="w-full rounded-xl border p-4"
               >
                 {choice.text}
               </Radio>
             ))}
           </Space>
         </Radio.Group>
-        {saving && <Text type="secondary">กำลังบันทึกคำตอบ...</Text>}
+        {saving && <Text type="secondary" className="!text-xs">{t("saving")}</Text>}
       </div>
     </Card>
   );

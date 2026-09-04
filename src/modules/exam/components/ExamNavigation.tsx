@@ -1,4 +1,5 @@
 import { Button, Card, Typography } from "antd";
+import { useTranslations } from "next-intl";
 
 const { Text } = Typography;
 
@@ -15,13 +16,14 @@ export function ExamNavigation({
   onPrevious,
   onNext,
 }: ExamNavigationProps) {
+  const t = useTranslations("exam");
   return (
     <Card>
       <div className="flex items-center justify-between">
-        <Button onClick={onPrevious} disabled={currentIndex === 0}>
-          ← ก่อนหน้า
+          <Button onClick={onPrevious} disabled={currentIndex === 0}>
+          ← {t("previous")}
         </Button>
-        <Text>
+        <Text className="!text-sm !font-semibold !text-white">
           {currentIndex + 1} / {questionCount}
         </Text>
         <Button
@@ -29,7 +31,7 @@ export function ExamNavigation({
           onClick={onNext}
           disabled={currentIndex === questionCount - 1}
         >
-          ถัดไป →
+          {t("next")} →
         </Button>
       </div>
     </Card>

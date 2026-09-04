@@ -1,7 +1,9 @@
 import type { Attempt } from "@/modules/exam/types/exam.types";
 
 export async function getAttempt(attemptId: number): Promise<Attempt> {
-  const response = await fetch(`/api/attempts/${attemptId}`);
+  const response = await fetch(`/api/attempts/${attemptId}`, {
+    credentials: "include",
+  });
 
   if (!response.ok) {
     throw new Error("ไม่สามารถโหลดข้อสอบได้");
@@ -17,6 +19,7 @@ export async function saveAnswer(
 ): Promise<void> {
   const response = await fetch(`/api/attempts/${attemptId}`, {
     method: "POST",
+    credentials: "include",
     headers: {
       "Content-Type": "application/json",
     },

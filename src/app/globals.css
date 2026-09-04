@@ -1,26 +1,145 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #0d0e12;
+  --foreground: #f4f3f8;
+  --surface: #17181f;
+  --surface-raised: #1d1e26;
+  --surface-soft: #23242e;
+  --border: #2b2c37;
+  --muted: #9899a8;
+  --primary: #6658e8;
+  --primary-bright: #7e72ff;
+  --success: #8fe34d;
+  --warning: #f5aa3a;
+  --danger: #f26476;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --font-sans: "Avenir Next", "Sukhumvit Set", sans-serif;
+  --font-mono: "SFMono-Regular", Consolas, monospace;
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: "Avenir Next", "Sukhumvit Set", sans-serif;
+  letter-spacing: 0;
+}
+
+* {
+  border-color: var(--border);
+}
+
+::selection {
+  background: rgba(102, 88, 232, 0.45);
+  color: white;
+}
+
+.app-shell {
+  min-height: 100vh;
+  background:
+    radial-gradient(circle at 8% 0%, rgba(102, 88, 232, 0.14), transparent 26rem),
+    radial-gradient(circle at 92% 18%, rgba(143, 227, 77, 0.06), transparent 22rem),
+    var(--background);
+}
+
+.app-header {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  background: rgba(13, 14, 18, 0.82);
+  backdrop-filter: blur(18px);
+}
+
+.app-panel,
+.ant-card {
+  background: var(--surface) !important;
+  border: 1px solid var(--border) !important;
+  border-radius: 16px !important;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.16) !important;
+}
+
+.ant-card-head {
+  border-bottom-color: var(--border) !important;
+}
+
+.ant-card-head-title,
+.ant-card-body,
+.ant-typography,
+.ant-card {
+  color: var(--foreground);
+}
+
+.ant-typography.ant-typography-secondary,
+.ant-typography-secondary {
+  color: var(--muted) !important;
+}
+
+.ant-btn {
+  border-radius: 9px !important;
+  border-color: var(--border) !important;
+  background: var(--surface-soft) !important;
+  color: var(--foreground) !important;
+  font-weight: 600;
+}
+
+.ant-btn:hover:not(:disabled) {
+  border-color: var(--primary-bright) !important;
+  color: white !important;
+}
+
+.ant-btn-primary {
+  background: var(--primary) !important;
+  border-color: var(--primary) !important;
+  box-shadow: 0 6px 16px rgba(102, 88, 232, 0.24);
+}
+
+.ant-btn-primary:hover:not(:disabled) {
+  background: var(--primary-bright) !important;
+}
+
+.ant-progress-inner,
+.ant-progress-bg {
+  border-radius: 99px !important;
+}
+
+.ant-progress-inner {
+  background: #0d0e12 !important;
+}
+
+.ant-progress-bg {
+  background: var(--primary) !important;
+}
+
+.ant-radio-wrapper {
+  border-color: var(--border) !important;
+  background: var(--surface-raised);
+  border-radius: 12px;
+  color: var(--foreground) !important;
+  transition: border-color 160ms ease, background 160ms ease;
+}
+
+.ant-radio-wrapper:hover,
+.ant-radio-wrapper-checked {
+  border-color: var(--primary) !important;
+  background: rgba(102, 88, 232, 0.14);
+}
+
+.ant-radio-inner {
+  background: transparent !important;
+  border-color: #626376 !important;
+}
+
+.ant-radio-checked .ant-radio-inner {
+  border-color: var(--primary-bright) !important;
+  background: var(--primary) !important;
+}
+
+@media (max-width: 640px) {
+  .app-header {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+  }
 }

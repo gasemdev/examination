@@ -1,0 +1,34 @@
+{
+  "login": {
+    "brand": "ฝึกทำข้อสอบนายสิบตำรวจ",
+    "track": "สายอำนวยการ",
+    "subtitle": "เสมือนจริง 150 ข้อ | 3 ชั่วโมง | สมัครครั้งเดียวอัปเดตตลอด",
+    "users": "ใช้งานแล้ว {count} คน",
+    "title": "เข้าสู่ระบบ",
+    "identifier": "ชื่อผู้ใช้ หรือ อีเมล",
+    "identifierPlaceholder": "ชื่อผู้ใช้ หรือ อีเมล",
+    "password": "รหัสผ่าน",
+    "passwordPlaceholder": "กรอกรหัสผ่าน",
+    "forgotPassword": "ลืมรหัสผ่าน?",
+    "submit": "เข้าสู่ระบบ",
+    "submitting": "กำลังเข้าสู่ระบบ...",
+    "google": "เข้าสู่ระบบด้วย Google",
+    "register": "สมัครใช้งาน",
+    "demo": "บัญชีทดลอง: demo / password123",
+    "invalid": "เข้าสู่ระบบไม่สำเร็จ",
+    "backHome": "← กลับหน้าหลัก", "or": "หรือ", "googleHint": "💡 สำหรับลูกค้าที่เคยสมัครโดยใช้ Gmail ให้เข้าสู่ระบบด้วย Google ได้เลย\nเข้า account เดิมได้ทันที ไม่ต้องจำรหัสผ่าน", "pricing": "1 ปี 149 บาท | 2 ปี 199 บาท"
+  },
+  "dashboard": {
+    "overview": "ภาพรวม", "exams": "ชุดข้อสอบ", "activity": "กิจกรรม", "account": "บัญชีของฉัน", "learningCenter": "ศูนย์การเรียนรู้", "welcome": "สวัสดี {name}", "continuePractice": "มาฝึกฝนกันต่อ", "dashboardDescription": "วางแผนการอ่าน ทบทวนบทเรียน และวัดผลความเข้าใจของคุณได้ในที่เดียว", "startExam": "เริ่มทำข้อสอบ", "averageScore": "คะแนนเฉลี่ยสะสม", "weeklyGoal": "เป้าหมายประจำสัปดาห์", "completedExams": "ข้อสอบที่ทำแล้ว", "answeredQuestions": "ตอบคำถามแล้ว", "accuracy": "ความแม่นยำ", "dailyChallenge": "โจทย์ประจำวันพร้อมให้คุณลองแล้ว", "startChallenge": "เริ่มโจทย์", "performance": "ความแม่นยำรายวิชา", "overallAverage": "ค่าเฉลี่ยรวม", "recentResults": "ผลสอบล่าสุด", "noResults": "ยังไม่มีผลสอบที่ส่งแล้ว", "improvement": "หัวข้อที่ควรพัฒนา", "noImprovement": "ทำข้อสอบเพื่อดูหัวข้อที่ควรพัฒนา", "scoreTrend": "แนวโน้มคะแนน", "noTrend": "ยังไม่มีข้อมูลแนวโน้ม", "nextGoal": "ความสำเร็จถัดไป", "questionBank": "คลังข้อสอบ", "studyNotes": "เทคนิคช่วยเตรียมสอบ", "loading": "กำลังโหลดข้อมูลแดชบอร์ด...", "loadError": "โหลดข้อมูลไม่สำเร็จ", "recommendation": "ข้อสอบที่เหมาะกับคุณกำลังรออยู่", "recommendationDescription": "จากผลการฝึกล่าสุด เราคัดเลือกชุดข้อสอบที่ช่วยเสริมจุดที่ควรพัฒนาให้แล้ว", "viewMore": "ดูรายละเอียด →", "dailyDescription": "ใช้เวลาประมาณ 10 นาที เพื่อรักษาความต่อเนื่องของการฝึกฝน", "latestSummary": "สรุปผลงานที่เพิ่งทำเสร็จ", "orderedBy": "จัดลำดับตามโอกาสในการพัฒนา", "recentPerformance": "ผลการทำข้อสอบล่าสุด", "weeklyTarget": "เป้าหมายประจำสัปดาห์", "questionCount": "{count} ข้อ", "startSet": "เริ่มทำชุดนี้", "selectSet": "เลือกชุดนี้", "studyDescription": "เสริมความพร้อมระหว่างการฝึกทำข้อสอบ", "all": "ทั้งหมด", "recommended": "แนะนำ", "examSet": "ชุดข้อสอบ", "practiceDescription": "ฝึกทำพร้อมดูผลลัพธ์", "sevenDays": "ความก้าวหน้าในช่วง 7 วัน", "done": "ทำแล้ว {count} ชุด", "target": "เป้าหมาย {count} ชุด", "nextGoalText": "ทำแบบฝึกหัดให้ครบ {count} ชุด", "remaining": "เหลืออีก {count} ชุดในสัปดาห์นี้", "advice": "ดูคำแนะนำเพิ่มเติม →", "minutes": "เวลา {count} นาที", "studyTitleOne": "จำศัพท์ Oxford 3000", "studyDescriptionOne": "เจาะคำศัพท์สำคัญและตัวอย่างการใช้", "studyTitleTwo": "คิดเลขเร็วขึ้น", "studyDescriptionTwo": "ทบทวนการคำนวณและทำโจทย์ให้คล่อง", "studyTitleThree": "ความรู้รอบตัวสอบ", "studyDescriptionThree": "บทความสั้น สรุปประเด็นที่ควรรู้"
+  },
+  "exam": {
+    "inProgress": "กำลังทำข้อสอบ", "question": "ข้อ {current} / {total}", "progress": "ความคืบหน้า", "answered": "{count} / {total} ข้อ", "previous": "ก่อนหน้า", "next": "ถัดไป", "chooseQuestion": "เลือกข้อสอบ", "saving": "กำลังบันทึกคำตอบ...", "loading": "กำลังโหลดข้อสอบ...", "notFound": "ไม่พบข้อมูลการทำข้อสอบ"
+  },
+  "landing": {
+    "brand": "ฝึกทำข้อสอบนายสิบตำรวจ", "shop": "🛒 ร้านค้า", "freeSignup": "สมัครฟรี", "badge": "🏅 ติวเข้มปี 2569", "headlineBefore": "ฝึกสอบ", "headlineAccent": "นายสิบตำรวจ", "headlineAfter": "เสมือนจริง ครบทุกวิชา", "description": "ข้อสอบคุณภาพ พร้อมวิเคราะห์ผลแบบละเอียด | รองรับทั้ง 6 วิชา พร้อมคลังข้อสอบที่อัปเดตอยู่เสมอ", "savedNotice": "💡 คะแนนและสถิติของคุณจะถูกบันทึกอัตโนมัติ", "questions": "📝 150 ข้อ / ชุด", "timer": "⏱ จับเวลา 3 ชม.", "subjects": "📚 6 วิชา", "instantResult": "📊 รู้ผลทันที", "submitted": "✅ 1,977,959 ข้อสอบที่ส่งแล้ว", "administration": "เหลือเวลาทำข้อสอบจริง", "administrationTrack": "(สายอำนวยการ/ผู้กำกับงาน)", "suppression": "เหลือเวลาสอบจริง", "suppressionTrack": "(สายปราบปราม)", "days": "วัน", "hours": "ชั่วโมง", "minutes": "นาที", "seconds": "วินาที", "signupFree": "📝 สมัครใช้งานฟรี", "loginArrow": "เข้าสู่ระบบ →", "google": "G  เข้าสู่ระบบด้วย Google", "googleNotice": "💡 สมัครสมาชิกผ่าน Google ได้ทันที ไม่ต้องจำรหัสผ่าน"
+  },
+  "common": {
+    "loading": "กำลังโหลด...",
+    "language": "ภาษา"
+  }
+}
