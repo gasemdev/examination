@@ -40,10 +40,12 @@ export async function POST(
 
     // 2. ตรวจว่าส่งข้อสอบไปแล้วหรือยัง
     if (attempt.completedAt) {
-      return NextResponse.json(
-        { message: "ข้อสอบชุดนี้ถูกส่งไปแล้ว" },
-        { status: 400 }
-      );
+      return NextResponse.json({
+        attemptId: attempt.id,
+        score: attempt.score,
+        completedAt: attempt.completedAt,
+        alreadySubmitted: true,
+      });
     }
 
     // 3. ดึงคำตอบที่ถูกต้องของแต่ละข้อ

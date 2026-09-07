@@ -103,6 +103,15 @@ export async function GET(
     const unansweredQuestions =
       totalQuestions - answeredQuestions;
 
+    const subjectStats = attempt.exam.questions.reduce<Record<string, { correct: number; total: number }>>((stats, examQuestion) => {
+      const subject = examQuestion.question.subject.name;
+      stats[subject] ??= { correct: 0, total: 0 };
+      stats[subject].total += 1;
+      const answer = attempt.answers.find((item) => item.questionId === examQuestion.questionId);
+      if (answer?.isCorrect) stats[subject].correct += 1;
+      return stats;
+    }, {});
+
     return NextResponse.json({
       attemptId: attempt.id,
 
@@ -124,6 +133,8 @@ export async function GET(
         completedAt: attempt.completedAt,
       },
 
+      subjectStats,
+
       answers: attempt.answers.map((answer) => {
         const question = attempt.exam.questions.find(
           (examQuestion) =>
@@ -138,6 +149,7 @@ export async function GET(
           questionId: answer.questionId,
           question: answer.question.question,
           explanation: answer.question.explanation,
+          subject: question?.question.subject.name ?? null,
 
           selectedChoice: answer.choice
             ? {

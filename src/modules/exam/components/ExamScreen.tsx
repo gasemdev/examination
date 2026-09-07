@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { useParams } from "next/navigation";
+import { useParams, useSearchParams } from "next/navigation";
 import { Typography } from "antd";
 import { useTranslations } from "next-intl";
 
@@ -10,6 +10,7 @@ import { ExamNavigation } from "@/modules/exam/components/ExamNavigation";
 import { ExamProgress } from "@/modules/exam/components/ExamProgress";
 import { QuestionCard } from "@/modules/exam/components/QuestionCard";
 import { QuestionNavigator } from "@/modules/exam/components/QuestionNavigator";
+import { PracticeExamScreen } from "@/modules/exam/components/PracticeExamScreen";
 import { PageErrorState, PageLoadingState } from "@/components/ui/PageState";
 import { useExam } from "@/modules/exam/hooks/useExam";
 import { useExamAnswers } from "@/modules/exam/hooks/useExamAnswers";
@@ -24,6 +25,7 @@ const { Text } = Typography;
 export function ExamScreen() {
   const t = useTranslations("exam");
   const params = useParams();
+  const searchParams = useSearchParams();
   const attemptId = Number(params.id);
   const { attempt, answers, setAnswers, loading } = useExam(attemptId);
   const questions = getAttemptQuestions(attempt);
@@ -44,6 +46,11 @@ export function ExamScreen() {
 
   if (!attempt || !currentExamQuestion || !currentQuestion) {
     return <PageErrorState><Text type="danger">{t("notFound")}</Text></PageErrorState>;
+  }
+
+  if (searchParams.get("mode") === "practice") {
+    const requestedCount = Number(searchParams.get("count"));
+    return <PracticeExamScreen attempt={attempt} count={Number.isFinite(requestedCount) && requestedCount > 0 ? requestedCount : questions.length} />;
   }
 
   return (

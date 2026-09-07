@@ -16,16 +16,221 @@
     "register": "Create account",
     "demo": "Demo account: demo / password123",
     "invalid": "Sign in failed",
-    "backHome": "← Back to home", "or": "or", "googleHint": "💡 If you signed up with Gmail, continue with Google to access your existing account.\nNo additional password is needed.", "pricing": "1 year 149 THB | 2 years 199 THB"
+    "backHome": "← Back to home",
+    "or": "or",
+    "googleHint": "💡 If you signed up with Gmail, continue with Google to access your existing account.\nNo additional password is needed.",
+    "pricing": "1 year 149 THB | 2 years 199 THB"
   },
   "dashboard": {
-    "overview": "Overview", "exams": "Exam sets", "activity": "Activity", "account": "My account", "learningCenter": "Learning center", "welcome": "Hello {name}", "continuePractice": "Keep practicing", "dashboardDescription": "Plan your study, review lessons and measure your understanding in one place.", "startExam": "Start an exam", "averageScore": "Average score", "weeklyGoal": "Weekly goal", "completedExams": "Completed exams", "answeredQuestions": "Questions answered", "accuracy": "Accuracy", "dailyChallenge": "Your daily challenge is ready", "startChallenge": "Start challenge", "performance": "Subject accuracy", "overallAverage": "Overall average", "recentResults": "Latest result", "noResults": "No submitted results yet", "improvement": "Topics to improve", "noImprovement": "Complete an exam to see topics to improve", "scoreTrend": "Score trend", "noTrend": "No trend data yet", "nextGoal": "Next goal", "questionBank": "Question bank", "studyNotes": "Study tips", "loading": "Loading dashboard...", "loadError": "Could not load dashboard data", "recommendation": "A recommended exam is waiting", "recommendationDescription": "Based on your latest practice, we selected an exam to strengthen your weaker areas.", "viewMore": "View details →", "dailyDescription": "Spend about 10 minutes to keep your practice streak going.", "latestSummary": "Summary of your latest attempt", "orderedBy": "Ordered by opportunity to improve", "recentPerformance": "Latest exam performance", "weeklyTarget": "Weekly goal", "questionCount": "{count} questions", "startSet": "Start this set", "selectSet": "Choose this set", "studyDescription": "Build confidence while practicing", "all": "All", "recommended": "Recommended", "examSet": "Exam set", "practiceDescription": "Practice and see your results", "sevenDays": "Progress over 7 days", "done": "{count} completed", "target": "Goal: {count}", "nextGoalText": "Complete {count} practice sets", "remaining": "{count} sets left this week", "advice": "View recommendations →", "minutes": "{count} minutes", "studyTitleOne": "Oxford 3000 vocabulary", "studyDescriptionOne": "Focus on key words and usage examples", "studyTitleTwo": "Calculate faster", "studyDescriptionTwo": "Review calculations and build fluency", "studyTitleThree": "General exam knowledge", "studyDescriptionThree": "Short articles with key topics to know"
+    "overview": "Overview",
+    "exams": "Exam sets",
+    "activity": "Activity",
+    "account": "My account",
+    "learningCenter": "Learning center",
+    "welcome": "Hello {name}",
+    "continuePractice": "Keep practicing",
+    "dashboardDescription": "Plan your study, review lessons and measure your understanding in one place.",
+    "startExam": "Start an exam",
+    "averageScore": "Average score",
+    "weeklyGoal": "Weekly goal",
+    "completedExams": "Completed exams",
+    "answeredQuestions": "Questions answered",
+    "accuracy": "Accuracy",
+    "passedExams": "Passed",
+    "failedExams": "Failed",
+    "highestScore": "Highest score",
+    "examCountdown": "Time remaining for the real exam",
+    "examDate": "Exam date: November 29, 2026",
+    "days": "days",
+    "hoursUnit": "hrs",
+    "minutesUnit": "minutes",
+    "secondsUnit": "seconds",
+    "hours": "hrs",
+    "currentStreak": "Current practice score",
+    "streakDays": "Day streak",
+    "dailyChallenge": "Your daily challenge is ready",
+    "startChallenge": "Start challenge",
+    "pausedExamTitle": "Unfinished exam: {title}",
+    "pausedExamDescription": "Practice mode - updated just now",
+    "discardPausedExam": "Discard",
+    "continuePausedExam": "Continue",
+    "performance": "Subject accuracy",
+    "overallAverage": "Overall average",
+    "recentResults": "Latest result",
+    "noResults": "No submitted results yet",
+    "improvement": "Topics to improve",
+    "noImprovement": "Complete an exam to see topics to improve",
+    "scoreTrend": "Score trend",
+    "noTrend": "No trend data yet",
+    "nextGoal": "Next goal",
+    "questionBank": "Question bank",
+    "studyNotes": "Study tips",
+    "loading": "Loading dashboard...",
+    "loadError": "Could not load dashboard data",
+    "recommendation": "A recommended exam is waiting",
+    "recommendationDescription": "Based on your latest practice, we selected an exam to strengthen your weaker areas.",
+    "viewMore": "View details →",
+    "dailyDescription": "Spend about 10 minutes to keep your practice streak going.",
+    "latestSummary": "Summary of your latest attempt",
+    "orderedBy": "Ordered by opportunity to improve",
+    "recentPerformance": "Latest exam performance",
+    "weeklyTarget": "Weekly goal",
+    "questionCount": "{count} questions",
+    "startSet": "Start this set",
+    "selectSet": "Choose this set",
+    "studyDescription": "Build confidence while practicing",
+    "all": "All",
+    "recommended": "Recommended",
+    "examSet": "Exam set",
+    "practiceDescription": "Practice and see your results",
+    "sevenDays": "Progress over 7 days",
+    "done": "{count} completed",
+    "target": "Goal: {count}",
+    "nextGoalText": "Complete {count} practice sets",
+    "remaining": "{count} sets left this week",
+    "advice": "View recommendations →",
+    "minutes": "{count} minutes",
+    "studyTitleOne": "Oxford 3000 vocabulary",
+    "studyDescriptionOne": "Focus on key words and usage examples",
+    "studyTitleTwo": "Calculate faster",
+    "studyDescriptionTwo": "Review calculations and build fluency",
+    "studyTitleThree": "General exam knowledge",
+    "studyDescriptionThree": "Short articles with key topics to know",
+    "questionBankDescription": "Choose an exam set - try a free set first or ask Admin to unlock a track",
+    "administrationSets": "Administration",
+    "evidenceSets": "Forensics",
+    "operationsSets": "Operations",
+    "fullSets": "Full 150-question sets",
+    "subjectSets": "By subject",
+    "topicSets": "By topic",
+    "nameSets": "By name"
+    ,"questionsUnit": "questions"
+    ,"minutesUnitLong": "minutes"
+    ,"passingScore": "Passing score: 135"
+    ,"notStartedYet": "You have not taken this set yet"
+    ,"closeModal": "Close dialog"
+    ,"questionOrder": "Question order"
+    ,"randomOrder": "Random"
+    ,"subjectOrder": "By subject"
+    ,"questionLayout": "Question layout"
+    ,"continuousLayout": "Continuous scroll"
+    ,"continuousDescription": "All questions appear in one long page"
+    ,"mapLayout": "Question + map"
+    ,"mapDescription": "One question at a time with a question map"
+    ,"startForReal": "Start exam"
+    ,"practice": "Practice"
+    ,"cancel": "Cancel"
+    ,"practiceMode": "Practice mode"
+    ,"practiceSubtitle": "Choose the subjects and practice format"
+    ,"practiceSettings": "Practice settings"
+    ,"practiceStats": "Practice stats"
+    ,"practiceQuestionCount": "Number of questions"
+    ,"allQuestions": "All"
+    ,"revealAnswers": "Answer reveal"
+    ,"immediateReveal": "Immediately"
+    ,"endReveal": "After finishing"
+    ,"startPractice": "Start practice ({count} questions)"
+    ,"startingPractice": "Starting practice..."
   },
   "exam": {
-    "inProgress": "Exam in progress", "question": "Question {current} / {total}", "progress": "Progress", "answered": "{count} / {total} answered", "previous": "Previous", "next": "Next", "chooseQuestion": "Choose a question", "saving": "Saving answer...", "loading": "Loading exam...", "notFound": "Exam attempt not found"
+    "inProgress": "Exam in progress",
+    "question": "Question {current} / {total}",
+    "progress": "Progress",
+    "answered": "{count} / {total} answered",
+    "answeredStatus": "Answered",
+    "previous": "Previous",
+    "next": "Next",
+    "chooseQuestion": "Choose a question",
+    "saving": "Saving answer...",
+    "loading": "Loading exam...",
+    "notFound": "Exam attempt not found",
+    "noTimer": "No timer",
+    "submitExam": "Submit exam",
+    "flag": "Flag",
+    "favorite": "Favorite",
+    "report": "Report",
+    "submitConfirm": "Confirm submission?",
+    "answeredSummary": "You answered {answered} / {total} questions",
+    "unansweredSummary": "{count} questions are still unanswered",
+    "backToExam": "Back to exam",
+    "confirmSubmit": "Confirm submission",
+    "submittingExam": "Submitting...",
+    "cancel": "Cancel",
+    "hideQuestions": "Hide",
+    "showQuestions": "Show"
+    ,"leaveExamTitle": "Leave the test?"
+    ,"leaveExamDescription": "Your progress is saved automatically. You can continue later from the dashboard."
+    ,"continueExam": "Continue"
+    ,"leaveExam": "Pause for now"
+  },
+  "result": {
+    "resultTitle": "Exam result",
+    "backDashboard": "Back to dashboard",
+    "loading": "Loading result...",
+    "loadError": "Could not load result",
+    "passed": "Passed",
+    "failed": "Not passed",
+    "percent": "{value}% score",
+    "encouragement": "Review the answers to improve your weaker areas",
+    "correct": "Correct",
+    "incorrect": "Incorrect",
+    "unanswered": "Unanswered",
+    "time": "Time",
+    "answeredProgress": "Answered {answered}/{total}",
+    "unansweredProgress": "{count} unanswered",
+    "answerSummary": "Answer summary",
+    "answerSummaryDescription": "An overview of correct answers and areas to review",
+    "subjectSummary": "Subject performance",
+    "subjectSummaryDescription": "See strengths and topics to improve",
+    "questionsUnit": "questions",
+    "unknownSubject": "Unknown subject"
+    ,"improvementTitle": "Topics to improve (recommended)"
+    ,"improvementDescription": "Review topics where you can strengthen your score"
+    ,"practiceMore": "Practice more →"
+    ,"reviewTitle": "All answers and explanations"
+    ,"reviewDescription": "Review answers and explanations to learn from mistakes"
+    ,"allAnswers": "All"
+    ,"wrongAnswers": "Incorrect"
+    ,"correctAnswers": "Correct"
+    ,"questionNumber": "Question {number}"
+    ,"yourAnswer": "Your answer"
+    ,"correctAnswer": "Correct answer"
+    ,"explanation": "Explanation"
+    ,"viewHistory": "View history"
+    ,"retake": "Retake"
   },
   "landing": {
-    "brand": "Police Officer Exam Practice", "shop": "🛒 Shop", "freeSignup": "Sign up free", "badge": "🏅 Intensive prep 2026", "headlineBefore": "Practice for", "headlineAccent": "police officer exams", "headlineAfter": "with realistic full-subject tests", "description": "Quality questions with detailed analysis | Covering all 6 subjects with an updated question bank", "savedNotice": "💡 Your scores and statistics are saved automatically", "questions": "📝 150 questions / set", "timer": "⏱ 3-hour timer", "subjects": "📚 6 subjects", "instantResult": "📊 Instant results", "submitted": "✅ 1,977,959 submitted answers", "administration": "Time remaining for the real exam", "administrationTrack": "(Administration track)", "suppression": "Time remaining for the real exam", "suppressionTrack": "(Operations track)", "days": "days", "hours": "hours", "minutes": "minutes", "seconds": "seconds", "signupFree": "📝 Sign up free", "loginArrow": "Sign in →", "google": "G  Continue with Google", "googleNotice": "💡 Sign up with Google instantly without remembering another password"
+    "brand": "Police Officer Exam Practice",
+    "shop": "🛒 Shop",
+    "freeSignup": "Sign up free",
+    "badge": "🏅 Intensive prep 2026",
+    "headlineBefore": "Practice for",
+    "headlineAccent": "police officer exams",
+    "headlineAfter": "with realistic full-subject tests",
+    "description": "Quality questions with detailed analysis | Covering all 6 subjects with an updated question bank",
+    "savedNotice": "💡 Your scores and statistics are saved automatically",
+    "questions": "📝 150 questions / set",
+    "timer": "⏱ 3-hour timer",
+    "subjects": "📚 6 subjects",
+    "instantResult": "📊 Instant results",
+    "submitted": "✅ 1,977,959 submitted answers",
+    "usersStat": "system users",
+    "setsStat": "question sets",
+    "subjectsStat": "subject sets",
+    "practiceStat": "practice sessions",
+    "answersStat": "submitted answers",
+    "administration": "Time remaining for the real exam",
+    "administrationTrack": "(Administration track)",
+    "suppression": "Time remaining for the real exam",
+    "suppressionTrack": "(Operations track)",
+    "days": "days",
+    "hours": "hours",
+    "minutes": "minutes",
+    "seconds": "seconds",
+    "signupFree": "📝 Sign up free",
+    "loginArrow": "Sign in →",
+    "google": "G  Continue with Google",
+    "googleNotice": "💡 Sign up with Google instantly without remembering another password"
   },
   "common": {
     "loading": "Loading...",

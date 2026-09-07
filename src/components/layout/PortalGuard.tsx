@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect } from "react";
-import { usePathname, useRouter } from "next/navigation";
+import { usePathname } from "next/navigation";
 
 import { useAuth } from "@/auth/useAuth";
 import { PageLoadingState } from "@/components/ui/PageState";
@@ -13,7 +13,6 @@ function getLoginPath(pathname: string) {
 
 export function PortalGuard({ children }: { children: React.ReactNode }) {
   const { user, initialized } = useAuth();
-  const router = useRouter();
   const pathname = usePathname();
 
   useEffect(() => {
@@ -22,10 +21,9 @@ export function PortalGuard({ children }: { children: React.ReactNode }) {
       const target = pathname === "/"
         ? loginPath
         : `${loginPath}?next=${encodeURIComponent(pathname)}`;
-      router.replace(target);
-      router.refresh();
+      window.location.replace(target);
     }
-  }, [initialized, pathname, router, user]);
+  }, [initialized, pathname, user]);
 
   if (!initialized || !user) {
     return <PageLoadingState>กำลังตรวจสอบเซสชัน...</PageLoadingState>;
